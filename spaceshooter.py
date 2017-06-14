@@ -90,8 +90,9 @@ class Player(SpaceShip):
         
     def thrustOn(self, event):
         self.thrust = 1
-        self.velocity[0] += -1*self.magnitude*sin(self.rotation)
-        self.velocity[1] += -1*self.magnitude*cos(self.rotation)
+        #self.velocity[0] += -1*self.magnitude*sin(self.rotation)
+        #self.velocity[1] += -1*self.magnitude*cos(self.rotation)
+        self.velocity = (self.velocity[0]-1*self.magnitude*sin(self.rotation), self.velocity[1]-1*self.magnitude*cos(self.rotation))
         
     def thrustOff(self, event):
         self.thrust = 0
